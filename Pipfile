@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 ipython = "*"
+setuptools = "*"
 
 [packages]
 django = "==2.1"
