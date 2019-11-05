@@ -22,6 +22,20 @@ model_obj.get_field_meta("my_field")
 # {"key": "value"}
 ```
 
+## Installation 
+
+Install from PiPy:
+
+```sh
+pip install django-model-field-meta
+```
+
+or, if you are using Pipenv:
+
+```sh
+pipenv install django-model-field-meta
+```
+
 ## Why metadata in model field?
 
 In one of my Django projects, I needed to supply extra information about our model fields. 
