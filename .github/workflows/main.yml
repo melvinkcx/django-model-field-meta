@@ -20,7 +20,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Set up environment for cffi
         run: |
-          apt install python-dev
+          sudo apt install python-dev
       - name: Generate requirements.txt from Pipfile
         run: |
           python -m pip install --upgrade pipenv pip
