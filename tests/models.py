@@ -1,5 +1,11 @@
-from django.test import TestCase
+from model_field_meta import models, FieldMetaMixin
 
 
-class FieldMetaTestSuite(TestCase):
-    pass
+class Coffee(FieldMetaMixin, models.Model):
+    packaging_meta = {"choices": {
+        "kg": (0.5, 1, 2, 5, 10, 15, 20),
+    }}
+
+    brand = models.CharField(max_length=512)
+    blend = models.CharField(max_length=512)
+    packaging = models.TextField(meta=packaging_meta)

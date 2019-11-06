@@ -8,6 +8,7 @@ Tested on Python 3+, Django 2.1+.
 
 ## Example
 
+Inserting metadata:
 ```python
 from model_field_meta import models, FieldMetaMixin
 
@@ -15,10 +16,18 @@ class MyModel(FieldMetaMixin, models.Model):
     my_field = models.TextField(meta={"key": "value"})
 ```
 
+Accessing metadata:
 ```python
 model_obj = MyModel.objects.first()
 
 model_obj.get_field_meta("my_field")
+# {"key": "value"}
+```
+
+Or, 
+
+```python
+MyModel.get_field_meta("my_field")
 # {"key": "value"}
 ```
 

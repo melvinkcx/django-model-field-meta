@@ -19,7 +19,8 @@ class WrappedDjangoModels:
                 self.new_classes[field] = type(field, (getattr(django_models, field),), {
                     "__init__": FieldWithMeta.__init__,
                     "_meta": None,
-                    "get_meta": FieldWithMeta.get_meta
+                    "get_meta": FieldWithMeta.get_meta,
+                    "deconstruct": FieldWithMeta.deconstruct,
                 })
 
     def __getattr__(self, attr):
