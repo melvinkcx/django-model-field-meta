@@ -7,10 +7,9 @@ verify_ssl = true
 ipython = "*"
 setuptools = "*"
 flake8 = "*"
-cffi = "==1.12.3"
 
 [packages]
-django = "==2.1"
+django = ">=2.1"
 
 [requires]
 python_version = "3.5"
