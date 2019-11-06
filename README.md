@@ -1,5 +1,7 @@
 # django-model-field-meta
 
+![](https://github.com/melvinkcx/django-model-field-meta/workflows/tests/badge.svg)
+
 An easy-to-use plugin to allow optional metadata of model fields. 
 
 Compatible with `django-model-utils`, `safedelete`, etc.
