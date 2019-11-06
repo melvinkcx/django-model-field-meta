@@ -25,7 +25,7 @@ jobs:
           pipenv install setuptools wheel twine
       - name: Run linting
         run: |
-          flake8 . --max-line-length=127
+          pipenv run flake8 . --max-line-length=127
       - name: Run tests
         run: |
-          python setup.py test
+          pipenv run python setup.py test
