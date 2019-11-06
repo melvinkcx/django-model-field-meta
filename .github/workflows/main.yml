@@ -21,11 +21,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pipenv
+          pipenv shell
           pipenv install
           pipenv install setuptools wheel twine
       - name: Lint
         run: |
-          pipenv install flake8
           flake8 . --max-line-length=127
       - name: Run tests
         run: |
