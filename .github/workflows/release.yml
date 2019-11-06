@@ -17,16 +17,17 @@ jobs:
           python-version: '3.5'
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pipenv pip
-          pipenv install
-          pipenv run pip freeze > requirements.txt
+          # Some dependencies have issues running in pipenv on GH Action :(
+          python -m pip install --upgrade pipenv_to_requirements pip
+          pipenv_to_requirements
           pip install -r requirements.txt
-          pip install setuptools wheel twine
-      - name: Run tests
+          pip install -r requirements-dev.txt
+      - name: Run testss
         run: |
           python setup.py test
       - name: Build package
         run: |
+          pip install setuptools wheel twine
           python3 setup.py sdist bdist_wheel
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@master
