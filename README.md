@@ -10,11 +10,13 @@ Tested on Python 3+, Django 2.1+.
 
 ## Example
 
-Inserting metadata:
+### Inserting metadata:
+
 ```python
+from django.db import models   # Remove this 
 from model_field_meta import models, FieldMetaMixin
 
-class MyModel(FieldMetaMixin, models.Model):
+class MyModel(FieldMetaMixin, models.Model):  # Add FieldMetaMixin
     my_field = models.TextField(meta={"key": "value"})
 ```
 
