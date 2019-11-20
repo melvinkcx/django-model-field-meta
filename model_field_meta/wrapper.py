@@ -10,7 +10,6 @@ class WrappedDjangoModels:
     def __init__(self):
         """
         Why not also wrap `django.db.models.Model` here?
-
         """
 
         # Model fields

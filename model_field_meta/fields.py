@@ -17,4 +17,15 @@ class FieldWithMeta:
         base_class = self.__class__.__bases__[0]
         base_class_path = "{}.{}".format(base_class.__module__, base_class.__qualname__)
         (field_name, _, args, kwargs) = super(self.__class__, self).deconstruct()
+
+        # The lines below are taken from Django source code: django.db.models.fields.Field.deconstruct()
+        if base_class_path.startswith("django.db.models.fields.related"):
+            base_class_path = base_class_path.replace("django.db.models.fields.related", "django.db.models")
+        elif base_class_path.startswith("django.db.models.fields.files"):
+            base_class_path = base_class_path.replace("django.db.models.fields.files", "django.db.models")
+        elif base_class_path.startswith("django.db.models.fields.proxy"):
+            base_class_path = base_class_path.replace("django.db.models.fields.proxy", "django.db.models")
+        elif base_class_path.startswith("django.db.models.fields"):
+            base_class_path = base_class_path.replace("django.db.models.fields", "django.db.models")
+
         return field_name, base_class_path, args, kwargs
