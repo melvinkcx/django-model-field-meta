@@ -27,10 +27,10 @@ setuptools.setup(
     url="https://github.com/melvinkcx/django-model-field-meta",
     packages=setuptools.find_packages(exclude=["tests.*"]),
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
