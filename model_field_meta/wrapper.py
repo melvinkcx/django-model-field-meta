@@ -15,7 +15,7 @@ class WrappedDjangoModels:
             if field.endswith("Field") and field != "Field":
                 base_class = getattr(django_models, field)
                 self.new_classes[field] = type(field, (base_class,), {
-                    "__init__": FieldWithMeta.__init__,
+                    "__init__": FieldWithMeta.generate___init__(base_class),
                     "_meta": None,
                     "get_meta": FieldWithMeta.get_meta,
                     "deconstruct": FieldWithMeta.deconstruct,

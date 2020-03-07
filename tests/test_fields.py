@@ -4,6 +4,12 @@ from model_field_meta import models
 
 
 class FieldMetaTestSuite(TestCase):
+    def test_custom_field_can_be_instantiated(self):
+        class CustomTextField(models.TextField):
+            pass
+
+        CustomTextField()
+
     def test_empty_meta(self):
         field = models.TextField()
         self.assertFalse(field.get_meta())
